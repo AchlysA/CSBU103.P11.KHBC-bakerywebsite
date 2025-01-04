@@ -1,0 +1,32 @@
+<div class="author">
+  <h1 class="author__heading">SWEETBLISS BAKERY</h1>
+  <p class="author__body">Luôn đem lại những khoảnh khắc hạnh phúctrọn vẹn trong từng chiếc bánh.</p>
+</div>
+
+<img src="https://images.prismic.io/lf-web/ZsrShEaF0TcGJYEZ_LF-webcover-02.jpg?auto=format%2Ccompress&width=1920&height=1920&q=80&fit=max&w=1920"" alt="cake main" class="hero-image" width="981" height="528">
+
+<section class="articles">
+  <h2 class="articles__heading">Latest Posts</h2>
+
+  <ul class="article-ul">
+    <% data.forEach(post => { %>
+      <li>
+        <a href="/post/<%= post._id %>">
+          <span><%= post.title %></span>
+          <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+        </a>
+      </li>
+    <% }) %>
+  </ul>
+
+
+  <% if (nextPage !== null) { %>
+    <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+  <% } %>
+ 
+
+  
+
+
+
+</section>
